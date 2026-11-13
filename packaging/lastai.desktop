@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Last AI
+Comment=Local-first AI harness with a memory that lasts
+Exec=lastai-gui
+Icon=lastai
+Categories=Development;Utility;
+Terminal=false
