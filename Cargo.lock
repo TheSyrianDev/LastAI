@@ -3524,7 +3524,7 @@ dependencies = [
 [[package]]
 name = "hfd-core"
 version = "0.4.0-rc.1"
-source = "git+https://github.com/TheSyrianDev/hf-dl?tag=v0.4.0-rc.1#b7d030bc6940026f32e8f614720b03fa20b693e6"
+source = "git+https://github.com/TheSyrianDev/hf-dl?tag=v0.4.0-rc.1#8e24715f1f28c21f09ab78c4cb37e44deb876bec"
 dependencies = [
  "fs2",
  "futures-util",
