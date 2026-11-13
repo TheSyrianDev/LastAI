@@ -25,7 +25,7 @@ jobs:
         run: |
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             ver="${GITHUB_REF_NAME#v}"
-            sed -i "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml
+            sed -i.bak "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml && rm -f Cargo.toml.bak
           fi
       - name: Build the AppImage
         env:
@@ -57,7 +57,7 @@ jobs:
         run: |
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             ver="${GITHUB_REF_NAME#v}"
-            sed -i "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml
+            sed -i.bak "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml && rm -f Cargo.toml.bak
           fi
       - name: Build
         run: |
@@ -96,7 +96,7 @@ jobs:
         run: |
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             ver="${GITHUB_REF_NAME#v}"
-            sed -i "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml
+            sed -i.bak "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml && rm -f Cargo.toml.bak
           fi
       - name: Build
         run: |
@@ -162,7 +162,7 @@ jobs:
         run: |
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             ver="${GITHUB_REF_NAME#v}"
-            sed -i "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml
+            sed -i.bak "s/^version = \"0.0.0\"$/version = \"$ver\"/" Cargo.toml && rm -f Cargo.toml.bak
           fi
       - name: Build
         run: |
