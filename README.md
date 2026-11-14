@@ -73,10 +73,21 @@ The Create block on the Models and keys page makes images (Z-Image Turbo) and sh
 
 ## Install and release build
 
-- Source: `cargo build --release` (needs Rust stable; on Linux the desktop app needs the usual GPUI and system libraries).
-- Linux AppImage: `packaging/build-appimage.sh` (needs `linuxdeploy`; see the script's header).
-- Omarchy / Arch: `sudo pacman -U LastAI-*.pkg.tar.zst`, then `lastai-omarchy-setup` (sets up the theme hook and icon for your user). Build the package yourself with `makepkg -si` in `packaging/aur`; `scripts/install-omarchy.sh` still installs a source build into your home folder.
+Release downloads (prereleases on GitHub):
+
+- Debian / Ubuntu: `sudo apt install ./LastAI-<version>-amd64.deb`.
+- Fedora / openSUSE: `sudo dnf install ./LastAI-<version>-x86_64.rpm`.
+- Arch / Omarchy: `sudo pacman -U LastAI-*.pkg.tar.zst`, then `lastai-omarchy-setup` (sets up the theme hook and icon for your user). This is the only build with the Omarchy looks.
 - Other Linux distributions: the AppImage.
+- Windows: the `LastAI-<version>-windows-x64.zip`.
+- macOS (Apple silicon, early alpha): the `LastAI-<version>-macos-arm64.dmg`.
+
+Build it yourself:
+
+- Source: `cargo build --release` (needs Rust stable; on Linux the desktop app needs the usual GPUI and system libraries).
+- Arch package: `makepkg -si` in `packaging/aur`. `scripts/install-omarchy.sh` still installs a source build into your home folder.
+- Linux AppImage: `packaging/build-appimage.sh` (needs `linuxdeploy`; see the script's header).
+- .deb / .rpm: `packaging/nfpm.yaml` (see its header).
 
 ## Commands
 
