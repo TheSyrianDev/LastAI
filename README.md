@@ -47,7 +47,7 @@ target/release/lastai-gui # or the desktop app (needs the core running)
 
 The desktop app finds the core and its token by itself (flags: `--base`, `--token-file`). It has plain default looks you can change: put a `.toml` file in `~/.config/lastai/themes/` (the six built-in ones, three families each in light and dark, are in `crates/lh-gui/themes/` as examples). Press Ctrl+N for a new chat.
 
-The Omarchy release (`LastAI-<version>-omarchy-x86_64.tar.gz`, installed with its `install-omarchy.sh`) also offers the desktop's own look, and an "Omarchy (transparent)" look that is liquid glass in the Omarchy colours. The transparent look is as see-through as the Hyprland window rule for the app's window (class `lastai-gui`) says; without a rule it stays opaque. Other builds (AppImage, Windows, macOS, or a source build with `--no-default-features`) leave the Omarchy looks out. To add one, put this line in `~/.config/hypr/hyprland.lua` (0.85 is how much of the window shows):
+The Omarchy release (the Arch package `LastAI-<version>-x86_64.pkg.tar.zst`: `sudo pacman -U LastAI-*.pkg.tar.zst`, then `lastai-omarchy-setup`) also offers the desktop's own look, and an "Omarchy (transparent)" look that is liquid glass in the Omarchy colours. The transparent look is as see-through as the Hyprland window rule for the app's window (class `lastai-gui`) says; without a rule it stays opaque. Other builds (AppImage, Windows, macOS, or a source build with `--no-default-features`) leave the Omarchy looks out. To add one, put this line in `~/.config/hypr/hyprland.lua` (0.85 is how much of the window shows):
 
 ```lua
 o.window("lastai-gui", { opacity = "0.85 override 0.85 override" })
@@ -75,7 +75,8 @@ The Create block on the Models and keys page makes images (Z-Image Turbo) and sh
 
 - Source: `cargo build --release` (needs Rust stable; on Linux the desktop app needs the usual GPUI and system libraries).
 - Linux AppImage: `packaging/build-appimage.sh` (needs `linuxdeploy`; see the script's header).
-- Omarchy: `scripts/install-omarchy.sh`.
+- Omarchy / Arch: `sudo pacman -U LastAI-*.pkg.tar.zst`, then `lastai-omarchy-setup` (sets up the theme hook and icon for your user). Build the package yourself with `makepkg -si` in `packaging/aur`; `scripts/install-omarchy.sh` still installs a source build into your home folder.
+- Other Linux distributions: the AppImage.
 
 ## Commands
 
